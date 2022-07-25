@@ -2,57 +2,62 @@ package org.example;
 
 import org.example.exceptions.MyArrayListIllegalArgumentException;
 import org.example.exceptions.MyArrayListIndexOutException;
-import org.example.interfaces.StringList;
+import org.example.interfaces.IntegerList;
+
 import java.util.Arrays;
 import java.util.Objects;
 
-public class MyArrayList<T> implements StringList {
 
-    private final String[] list;
+public class MyArrayListInteger<T> implements IntegerList {
 
+    private final Integer[] listInt;
     private int capacity;
     private final int DEFAULT_CAPACITY = 10;
 
-    public MyArrayList(int capacity) {
+    public MyArrayListInteger(int capacity) {
         if (capacity <= 0) {
             throw new MyArrayListIllegalArgumentException("Размер массива <= 0");
         } else {
-            list = new String[capacity];
+            listInt = new Integer[capacity];
         }
     }
 
-    public MyArrayList() {
-        list = new String[DEFAULT_CAPACITY];
+    public MyArrayListInteger() {
+        listInt = new Integer[DEFAULT_CAPACITY];
     }
 
+
     @Override
-    public String add(String item) {
+    public Integer add(Integer item) {
         if (Objects.isNull(item)) {
             throw new MyArrayListIllegalArgumentException("Передаваемое значение null");
         }
-        if (capacity >= list.length) {
+        if (capacity >= listInt.length) {
             throw new MyArrayListIndexOutException("Все ячейки массива заполнены");
         }
-        return list[capacity++] = item;
+        listInt[capacity] = item;
+        capacity++;
+        return item;
     }
 
     @Override
-    public String add(int index, String item) {
+    public Integer add(int index, Integer item) {
         if (index > capacity) {
             throw new MyArrayListIllegalArgumentException("Индекс: " + index + ", " + "количество элементов в списке: " + capacity);
         }
         if (index < 0) {
             throw new MyArrayListIllegalArgumentException("Индекc должен быть больше 0");
         }
-        if (list[index] != null) {
+        if (listInt[index] != null) {
             throw new MyArrayListIllegalArgumentException("ячейка уже занята");
         } else if (item == null) {
             throw new MyArrayListIllegalArgumentException("переданное значение = null");
         }
+
         for (int i = capacity; i > index; i--) {
-            list[i] = list[i - 1];
+            listInt[i] = listInt[i - 1];
         }
-        list[index] = item;
+        listInt[index] = item;
         capacity++;
 
         return item;
@@ -60,7 +65,7 @@ public class MyArrayList<T> implements StringList {
     }
 
     @Override
-    public String set(int index, String item) {
+    public Integer set(int index, Integer item) {
         if (Objects.isNull(item)) {
             throw new MyArrayListIllegalArgumentException("Передаваемое в список значение не должно быть null");
         }
@@ -70,20 +75,21 @@ public class MyArrayList<T> implements StringList {
         if (index < 0) {
             throw new MyArrayListIllegalArgumentException("Индекc должен быть больше 0");
         } else {
-            list[index] = item;
+            listInt[index] = item;
         }
         return item;
     }
 
     @Override
-    public String remove(String item) {
+    public Integer remove(String item) {
         if (Objects.isNull(item)) {
             throw new MyArrayListIllegalArgumentException("Передаваемое в список значение не должно быть null");
         }
         int indexToDelete = -1;
         for (int i = 0; i < capacity; i++) {
-            if (item.equals(list[i])) {
+            if (Integer.valueOf(item).equals(listInt[i])) {
                 indexToDelete = i;
+
                 break;
             }
         }
@@ -96,56 +102,83 @@ public class MyArrayList<T> implements StringList {
 
 
     @Override
-    public String remove(int index) {
+    public Integer remove(int index) {
         if (index > capacity) {
             throw new MyArrayListIllegalArgumentException("Индекс: " + index + ", " + "количество элементов в списке: " + capacity);
         }
         if (index < 0) {
             throw new MyArrayListIllegalArgumentException("Индекc должен быть больше 0");
         }
-        String result = "";
-        if (index <= list.length) {
-            if (list[index] != null) {
-                result = list[index];
-                list[index] = null;
+        Integer result = 0;
+        if (index <= listInt.length) {
+            if (listInt[index] != null) {
+                result = listInt[index];
+                listInt[index] = null;
                 capacity--;
             } else {
                 throw new MyArrayListIllegalArgumentException("ячейка не содержит данных");
             }
         }
-        for (int j = 0; j < list.length - 1; j++) {
-            if (j == index && j <= list.length - 1) {
-                list[j] = list[index + 1];
-                list[index + 1] = null;
+        for (int j = 0; j < listInt.length - 1; j++) {
+            if (j == index && j <= listInt.length - 1) {
+                listInt[j] = listInt[index + 1];
+                listInt[index + 1] = null;
                 index++;
             }
         }
-        return "удалено значение " + result;
+        return result;
     }
 
-
-    @Override
-    public boolean contains(String item) {
-        if (Objects.isNull(item)) {
-            throw new MyArrayListIllegalArgumentException("Передаваемое в список значение не должно быть null");
+    private Integer[] doSortingInsertion() {
+        for (int i = 1; i < capacity; i++) {
+            int current = listInt[i];
+            int j = i;
+            while (j > 0 && listInt[j - 1] > current) {
+                listInt[j] = listInt[j - 1];
+                j--;
+            }
+            listInt[j] = current;
         }
-        for (int i = 0; i < capacity; i++) {
-            if (item.equals(list[i])) {
+        return listInt;
+
+
+    }
+
+    private boolean doBinarySearch(Integer[] listInt, int element) {
+        int min = 0;
+        int max = listInt.length - 1;
+
+        while (min <= max) {
+            int mid = (min + max) / 2;
+            if (element == listInt[mid]) {
                 return true;
+            }
+            if (element < listInt[mid]) {
+                max = mid - 1;
+            } else {
+                min = mid + 1;
             }
         }
         return false;
-
     }
 
     @Override
-    public int indexOf(String item) {
+    public boolean contains(Integer item) {
+        if (Objects.isNull(item)) {
+            throw new MyArrayListIllegalArgumentException("Передаваемое в список значение не должно быть null");
+        }
+        return doBinarySearch(doSortingInsertion(), item);
+    }
+
+
+    @Override
+    public int indexOf(Integer item) {
         if (Objects.isNull(item)) {
             throw new MyArrayListIllegalArgumentException("Передаваемое в список значение не должно быть null");
         }
         int result = -1;
-        for (int i = 0; i < list.length; i++) {
-            if (item.equals(list[i])) {
+        for (int i = 0; i < listInt.length; i++) {
+            if (item.equals(listInt[i])) {
                 result = i;
                 break;
             }
@@ -154,13 +187,13 @@ public class MyArrayList<T> implements StringList {
     }
 
     @Override
-    public int lastIndexOf(String item) {
+    public int lastIndexOf(Integer item) {
         if (Objects.isNull(item)) {
             throw new MyArrayListIllegalArgumentException("Передаваемое в список значение не должно быть null");
         }
         int result = -1;
-        for (int i = list.length - 1; i >= 0; i--) {
-            if (item.equals(list[i])) {
+        for (int i = listInt.length - 1; i >= 0; i--) {
+            if (item.equals(listInt[i])) {
                 result = i;
                 break;
             }
@@ -169,18 +202,18 @@ public class MyArrayList<T> implements StringList {
     }
 
     @Override
-    public String get(int index) {
+    public Integer get(int index) {
         if (index > capacity) {
             throw new MyArrayListIllegalArgumentException("Индекс: " + index + ", " + "количество элементов в списке: " + capacity);
         }
         if (index < 0) {
             throw new MyArrayListIllegalArgumentException("Индекc должен быть больше 0");
         }
-        return list[index];
+        return listInt[index];
     }
 
     @Override
-    public boolean equals(StringList otherList) {
+    public boolean equals(IntegerList otherList) {
         if (Objects.isNull(otherList)) {
             throw new MyArrayListIllegalArgumentException("Передаваемый список не должен быть null");
         }
@@ -188,7 +221,7 @@ public class MyArrayList<T> implements StringList {
             return false;
         }
         for (int i = 0; i < capacity; i++) {
-            if (!list[i].equals(otherList.get(i))) {
+            if (!listInt[i].equals(otherList.get(i))) {
                 return false;
             }
 
@@ -204,9 +237,9 @@ public class MyArrayList<T> implements StringList {
 
     @Override
     public boolean isEmpty() {
-            if (list[0] != null) {
-                return false;
-            }
+        if (listInt[0] != null) {
+            return false;
+        }
         return true;
 
     }
@@ -214,15 +247,15 @@ public class MyArrayList<T> implements StringList {
     @Override
     public void clear() {
         for (int i = 0; i < capacity; i++) {
-            list[i] = null;
+            listInt[i] = null;
         }
     }
 
     @Override
-    public String[] toArray() {
-        String[] toArray = new String[capacity];
+    public Integer[] toArray() {
+        Integer[] toArray = new Integer[capacity];
         for (int i = 0; i < capacity; i++) {
-            toArray[i] = list[i];
+            toArray[i] = listInt[i];
         }
         System.out.println("создан новый массив");
         return toArray;
@@ -232,11 +265,9 @@ public class MyArrayList<T> implements StringList {
     @Override
     public String toString() {
         return "MyArrayList{" +
-                "list=" + Arrays.toString(list) +
+                "listInt=" + Arrays.toString(listInt) +
                 ", size=" + capacity +
                 ", DEFAULT_CAPACITY=" + DEFAULT_CAPACITY +
                 '}';
     }
-
-
 }

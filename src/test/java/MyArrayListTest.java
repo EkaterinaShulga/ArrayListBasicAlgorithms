@@ -142,7 +142,7 @@ public class MyArrayListTest {
     }
 
     @Test
-    public void equalsLists() {
+    public void equalsListsNegative() {
         MyArrayList<String> myArrayList = new MyArrayList<>(10);
         MyArrayList<String> list = new MyArrayList<>(10);
 
@@ -151,12 +151,36 @@ public class MyArrayListTest {
         myArrayList.add(0, "30");
         myArrayList.add(1, "20");
         myArrayList.add(2, "40");
-        myArrayList.equals(list);
         boolean result = myArrayList.equals(list);
         Assertions.assertThat(result).isEqualTo(false);
         org.junit.jupiter.api.Assertions.assertThrows(MyArrayListIllegalArgumentException.class, () -> myArrayList.equals(null));
     }
+    @Test
+    public void equalsListsNegativeContent() {
+        MyArrayList<String> myArrayList = new MyArrayList<>(10);
+        MyArrayList<String> list = new MyArrayList<>(10);
 
+        list.add(0, "1");
+        list.add(1, "20");
+        myArrayList.add(0, "10");
+        myArrayList.add(1, "20");
+        boolean result = myArrayList.equals(list);
+        Assertions.assertThat(result).isEqualTo(false);
+        org.junit.jupiter.api.Assertions.assertThrows(MyArrayListIllegalArgumentException.class, () -> myArrayList.equals(null));
+    }
+    @Test
+    public void equalsListsPositive() {
+        MyArrayList<String> myArrayList = new MyArrayList<>(10);
+        MyArrayList<String> list = new MyArrayList<>(10);
+
+        list.add(0, "10");
+        list.add(1, "20");
+        myArrayList.add(0, "10");
+        myArrayList.add(1, "20");
+        boolean result = myArrayList.equals(list);
+        Assertions.assertThat(result).isEqualTo(true);
+
+    }
 
     @Test
     public void sizeValues() {
@@ -171,11 +195,11 @@ public class MyArrayListTest {
     public void isEmptyValues() {
         MyArrayList<String> myArrayList = new MyArrayList<>(10);
         boolean result = myArrayList.isEmpty();
-        Assertions.assertThat(result).isEqualTo(false);
+        Assertions.assertThat(result).isEqualTo(true);
         myArrayList.add(0, "10");
         myArrayList.add(1, "20");
         boolean result2 = myArrayList.isEmpty();
-        Assertions.assertThat(result2).isEqualTo(true);
+        Assertions.assertThat(result2).isEqualTo(false);
     }
 
     @Test
