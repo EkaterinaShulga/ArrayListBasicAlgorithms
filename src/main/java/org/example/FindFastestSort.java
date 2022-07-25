@@ -2,9 +2,6 @@ package org.example;
 
 public class FindFastestSort {
 
-    private Integer[] arr;
-
-
     public void generateArray(Integer[] arr) {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * 1000 + 1);
@@ -39,7 +36,7 @@ public class FindFastestSort {
         arr[indexB] = num;
     }
 
-    public void doBubbleSorting(Integer[] arr) {
+    private void doBubbleSorting(Integer[] arr) {
         generateArray(arr);
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1 - i; j++) {
@@ -52,7 +49,7 @@ public class FindFastestSort {
 
     }
 
-    public void doSortingChoice(Integer[] arr) {
+    private void doSortingChoice(Integer[] arr) {
         generateArray(arr);
         for (int i = 0; i < arr.length; i++) {
             int min = i;
@@ -65,7 +62,7 @@ public class FindFastestSort {
         }
     }
 
-    public void doSortingInsertion(Integer[] arr) {
+    private void doSortingInsertion(Integer[] arr) {
         generateArray(arr);
         for (int i = 1; i < arr.length; i++) {
             int current = arr[i];

@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        MyArrayList<String> myArrayList = new MyArrayList<String>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
         System.out.println("add---------------------------------------------------");
         System.out.println(myArrayList.add("15"));
         System.out.println(myArrayList);
@@ -24,6 +24,7 @@ public class Main {
         myArrayList.add(7, "80");
         myArrayList.add(8, "80");
         myArrayList.add(9, "90");
+
         System.out.println(myArrayList);
         System.out.println();
 
@@ -65,8 +66,7 @@ public class Main {
 
 
         System.out.println("equals---------------------------------------------------");
-        StringList otherList = new MyArrayList<String>() {
-        };
+        StringList otherList = new MyArrayList() {};
         otherList.add(0, "00");
         otherList.add(1, "20");
         otherList.add(2, "30");
@@ -189,11 +189,11 @@ public class Main {
         System.out.println("listInt.toArray---------------------------------------------------");
         System.out.println(Arrays.toString(listInt.toArray()));
 
-        FindFastestSort fastestSort = new FindFastestSort();
-        final Integer[] arr = new Integer[100_000];
-        System.out.println("продлжительность пузырьковой сортировки - " + fastestSort.calculateBubbleSortingTime(arr));
-        System.out.println("продолжительность  сортировки выбором -   " + fastestSort.calculateSortingTimeChoice(arr));
-        System.out.println("продолжительность  сортировки вставкой -   " + fastestSort.calculateInsertionSortTime(arr));
+      //  FindFastestSort fastestSort = new FindFastestSort();
+     //   final Integer[] arr = new Integer[100_000];
+     //   System.out.println("продлжительность пузырьковой сортировки - " + fastestSort.calculateBubbleSortingTime(arr));
+      //  System.out.println("продолжительность  сортировки выбором -   " + fastestSort.calculateSortingTimeChoice(arr));
+      //  System.out.println("продолжительность  сортировки вставкой -   " + fastestSort.calculateInsertionSortTime(arr));
 
     }
 }

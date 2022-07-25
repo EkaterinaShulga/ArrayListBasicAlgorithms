@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 
-public class MyArrayListInteger<T> implements IntegerList {
+public class MyArrayListInteger implements IntegerList {
 
     private final Integer[] listInt;
     private int capacity;
@@ -42,15 +42,16 @@ public class MyArrayListInteger<T> implements IntegerList {
 
     @Override
     public Integer add(int index, Integer item) {
+        if (capacity >= listInt.length) {
+            throw new MyArrayListIllegalArgumentException("Список полон");
+        }
         if (index > capacity) {
             throw new MyArrayListIllegalArgumentException("Индекс: " + index + ", " + "количество элементов в списке: " + capacity);
         }
         if (index < 0) {
             throw new MyArrayListIllegalArgumentException("Индекc должен быть больше 0");
         }
-        if (listInt[index] != null) {
-            throw new MyArrayListIllegalArgumentException("ячейка уже занята");
-        } else if (item == null) {
+        if (Objects.isNull(item)) {
             throw new MyArrayListIllegalArgumentException("переданное значение = null");
         }
 

@@ -6,7 +6,7 @@ import org.example.interfaces.StringList;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class MyArrayList<T> implements StringList {
+public class MyArrayList implements StringList {
 
     private final String[] list;
 
@@ -38,15 +38,16 @@ public class MyArrayList<T> implements StringList {
 
     @Override
     public String add(int index, String item) {
+        if (capacity>= list.length) {
+            throw new MyArrayListIllegalArgumentException("список полон");
+        }
         if (index > capacity) {
             throw new MyArrayListIllegalArgumentException("Индекс: " + index + ", " + "количество элементов в списке: " + capacity);
         }
         if (index < 0) {
             throw new MyArrayListIllegalArgumentException("Индекc должен быть больше 0");
         }
-        if (list[index] != null) {
-            throw new MyArrayListIllegalArgumentException("ячейка уже занята");
-        } else if (item == null) {
+         else if (item == null) {
             throw new MyArrayListIllegalArgumentException("переданное значение = null");
         }
         for (int i = capacity; i > index; i--) {

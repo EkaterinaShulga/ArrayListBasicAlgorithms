@@ -8,7 +8,7 @@ import org.junit.Test;
 public class MyArrayListTest {
 
 
-    private final MyArrayList<String> myArrayList = new MyArrayList<>();
+    private final MyArrayList myArrayList = new MyArrayList();
 
     public MyArrayListTest() {
     }
@@ -16,7 +16,7 @@ public class MyArrayListTest {
 
     @Test
     public void addValue() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
         String result = myArrayList.add("15");
         myArrayList.add("20");
         myArrayList.add("30");
@@ -34,22 +34,38 @@ public class MyArrayListTest {
 
     @Test
     public void addValueByIndex() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
         myArrayList.add(0, "10");
         String result = myArrayList.add(1, "20");
-        myArrayList.add(2, "30");
-        myArrayList.add(3, "10");
+        myArrayList.add(2, "20");
+        myArrayList.add(3, "30");
+        myArrayList.add(4, "40");
+        myArrayList.add(5, "50");
+        myArrayList.add(6, "60");
+        myArrayList.add(7, "70");
+        myArrayList.add(8, "80");
+        myArrayList.add(9, "90");
         Assertions.assertThat(result).isEqualTo("20");
         org.junit.jupiter.api.Assertions.assertThrows(MyArrayListIllegalArgumentException.class, () -> myArrayList.add(5, "17"));
+    }
+
+    @Test
+    public void addValueByIndexNegative() {
+        MyArrayList myArrayList = new MyArrayList(10);
+        myArrayList.add(0, "10");
+        myArrayList.add(1, "20");
+        myArrayList.add(2, "30");
+        myArrayList.add(3, "40");
+        String result =myArrayList.add(2, "30");
+        Assertions.assertThat(result).isEqualTo("30");
         org.junit.jupiter.api.Assertions.assertThrows(MyArrayListIllegalArgumentException.class, () -> myArrayList.add(-1, "17"));
-        org.junit.jupiter.api.Assertions.assertThrows(MyArrayListIllegalArgumentException.class, () -> myArrayList.add(1, "19"));
+        org.junit.jupiter.api.Assertions.assertThrows(MyArrayListIllegalArgumentException.class, () -> myArrayList.add(8, "20"));
         org.junit.jupiter.api.Assertions.assertThrows(MyArrayListIllegalArgumentException.class, () -> myArrayList.add(4, null));
     }
 
-
     @Test
     public void setValueByIndex() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
         myArrayList.add(0, "30");
         myArrayList.add(1, "20");
         myArrayList.add(2, "30");
@@ -69,7 +85,7 @@ public class MyArrayListTest {
 
     @Test
     public void removeValue() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
         myArrayList.add(0, "10");
         myArrayList.add(1, "20");
         myArrayList.add(2, "30");
@@ -82,7 +98,7 @@ public class MyArrayListTest {
 
     @Test
     public void removeValueByIndex() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
         myArrayList.add(0, "10");
         myArrayList.add(1, "20");
         myArrayList.add(2, "30");
@@ -96,7 +112,7 @@ public class MyArrayListTest {
 
     @Test
     public void containsValue() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
         myArrayList.add(0, "10");
         myArrayList.add(1, "20");
         Boolean result = myArrayList.contains("30");
@@ -108,7 +124,7 @@ public class MyArrayListTest {
 
     @Test
     public void indexValue() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
         myArrayList.add(0, "10");
         myArrayList.add(1, "20");
         int result = myArrayList.indexOf("20");
@@ -120,7 +136,7 @@ public class MyArrayListTest {
 
     @Test
     public void lastIndexOfValue() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
         myArrayList.add(0, "10");
         myArrayList.add(1, "20");
         int result = myArrayList.lastIndexOf("10");
@@ -132,7 +148,7 @@ public class MyArrayListTest {
 
     @Test
     public void getValue() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
         myArrayList.add(0, "10");
         myArrayList.add(1, "20");
         String result = myArrayList.get(1);
@@ -143,8 +159,8 @@ public class MyArrayListTest {
 
     @Test
     public void equalsListsNegative() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
-        MyArrayList<String> list = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
+        MyArrayList list = new MyArrayList(10);
 
         list.add(0, "30");
         list.add(1, "30");
@@ -155,10 +171,11 @@ public class MyArrayListTest {
         Assertions.assertThat(result).isEqualTo(false);
         org.junit.jupiter.api.Assertions.assertThrows(MyArrayListIllegalArgumentException.class, () -> myArrayList.equals(null));
     }
+
     @Test
     public void equalsListsNegativeContent() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
-        MyArrayList<String> list = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
+        MyArrayList list = new MyArrayList(10);
 
         list.add(0, "1");
         list.add(1, "20");
@@ -168,10 +185,11 @@ public class MyArrayListTest {
         Assertions.assertThat(result).isEqualTo(false);
         org.junit.jupiter.api.Assertions.assertThrows(MyArrayListIllegalArgumentException.class, () -> myArrayList.equals(null));
     }
+
     @Test
     public void equalsListsPositive() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
-        MyArrayList<String> list = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
+        MyArrayList list = new MyArrayList(10);
 
         list.add(0, "10");
         list.add(1, "20");
@@ -184,7 +202,7 @@ public class MyArrayListTest {
 
     @Test
     public void sizeValues() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
         myArrayList.add(0, "10");
         myArrayList.add(1, "20");
         int result = myArrayList.size();
@@ -193,7 +211,7 @@ public class MyArrayListTest {
 
     @Test
     public void isEmptyValues() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
         boolean result = myArrayList.isEmpty();
         Assertions.assertThat(result).isEqualTo(true);
         myArrayList.add(0, "10");
@@ -204,7 +222,7 @@ public class MyArrayListTest {
 
     @Test
     public void clearList() {
-        MyArrayList<String> myArrayList = new MyArrayList<>(10);
+        MyArrayList myArrayList = new MyArrayList(10);
         myArrayList.add(0, "10");
         myArrayList.add(1, "20");
         myArrayList.clear();
@@ -212,7 +230,7 @@ public class MyArrayListTest {
 
     @Test
     public void newStringList() {
-        MyArrayList<String> list = new MyArrayList<>(10);
+        MyArrayList list = new MyArrayList(10);
         list.add(0, "10");
         list.add(1, "20");
         list.toArray();
