@@ -185,7 +185,8 @@ public class MyArrayListInteger implements IntegerList {
         if (Objects.isNull(item)) {
             throw new MyArrayListIllegalArgumentException("Передаваемое в список значение не должно быть null");
         }
-        return doBinarySearch(doSortingInsertion(), item);
+        // return doBinarySearch(doSortingInsertion(), item);
+        return doBinarySearch(doQuickSort(listInt, 0, capacity - 1), item);
     }
 
 

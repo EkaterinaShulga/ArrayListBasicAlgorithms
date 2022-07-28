@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9986a79-1ef8-4606-ab31-f616b4bac644" name="Changes" comment="домашнее задание по теме 2.14/2.15 корректировки">
+    <list default="true" id="e9986a79-1ef8-4606-ab31-f616b4bac644" name="Changes" comment="домашнее задание по теме 2.16 Основы алгоритмов - часть 3 - выполнила">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyArrayListInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyArrayListInteger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MyArrayListIntegerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MyArrayListIntegerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +49,20 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.MyArrayListIntegerTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="ArrayListBasicAlgorithms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyArrayListIntegerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ArrayListBasicAlgorithms" />
       <option name="PACKAGE_NAME" value="" />
@@ -91,23 +102,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyArrayListIntegerTest.growArrayLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ArrayListBasicAlgorithms" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyArrayListIntegerTest" />
-      <option name="METHOD_NAME" value="growArrayLength" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.MyArrayListIntegerTest" />
         <item itemvalue="JUnit.MyArrayListIntegerTest.addValue" />
         <item itemvalue="JUnit.MyArrayListIntegerTest.addValueByIndex" />
         <item itemvalue="JUnit.MyArrayListIntegerTest.addValueByIndexNegative" />
-        <item itemvalue="JUnit.MyArrayListIntegerTest.growArrayLength" />
       </list>
     </recent_temporary>
   </component>
@@ -123,7 +124,8 @@
       <workItem from="1657893050806" duration="16131000" />
       <workItem from="1657941461571" duration="79293000" />
       <workItem from="1658579555928" duration="11806000" />
-      <workItem from="1658724355172" duration="40092000" />
+      <workItem from="1658724355172" duration="40313000" />
+      <workItem from="1659017431242" duration="340000" />
     </task>
     <task id="LOCAL-00001" summary="первый коммит">
       <created>1657892243471</created>
@@ -153,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658756120521</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="домашнее задание по теме 2.16 Основы алгоритмов - часть 3 - выполнила">
+      <created>1659017075330</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1659017075330</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +184,8 @@
     <MESSAGE value="домашнее задание по теме 2.14 Основы алгоритмов, часть 1 - выполнила" />
     <MESSAGE value="домашнее задание по теме 2.15 Основы алгоритмов, часть 2 - выполнила" />
     <MESSAGE value="домашнее задание по теме 2.14/2.15 корректировки" />
-    <option name="LAST_COMMIT_MESSAGE" value="домашнее задание по теме 2.14/2.15 корректировки" />
+    <MESSAGE value="домашнее задание по теме 2.16 Основы алгоритмов - часть 3 - выполнила" />
+    <option name="LAST_COMMIT_MESSAGE" value="домашнее задание по теме 2.16 Основы алгоритмов - часть 3 - выполнила" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListTest_lastIndexOfValue.ic" NAME="MyArrayListTest.lastIndexOfValue Coverage Results" MODIFIED="1658313110227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
