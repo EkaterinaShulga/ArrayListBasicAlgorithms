@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9986a79-1ef8-4606-ab31-f616b4bac644" name="Changes" comment="домашнее задание по теме 2.15 Основы алгоритмов, часть 2 - выполнила">
+    <list default="true" id="e9986a79-1ef8-4606-ab31-f616b4bac644" name="Changes" comment="домашнее задание по теме 2.14/2.15 корректировки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FindFastestSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FindFastestSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyArrayList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyArrayListInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyArrayListInteger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MyArrayListIntegerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MyArrayListIntegerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MyArrayListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MyArrayListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,20 +51,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="ArrayListBasicAlgorithms" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.MyArrayListIntegerTest">
     <configuration name="MyArrayListIntegerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ArrayListBasicAlgorithms" />
       <option name="PACKAGE_NAME" value="" />
@@ -77,30 +61,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyArrayListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyArrayListIntegerTest.addValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ArrayListBasicAlgorithms" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyArrayListTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="MyArrayListIntegerTest" />
+      <option name="METHOD_NAME" value="addValue" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyArrayListTest.addValueByIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyArrayListIntegerTest.addValueByIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ArrayListBasicAlgorithms" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyArrayListTest" />
+      <option name="MAIN_CLASS_NAME" value="MyArrayListIntegerTest" />
       <option name="METHOD_NAME" value="addValueByIndex" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyArrayListTest.addValueByIndexNegative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyArrayListIntegerTest.addValueByIndexNegative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ArrayListBasicAlgorithms" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyArrayListTest" />
+      <option name="MAIN_CLASS_NAME" value="MyArrayListIntegerTest" />
       <option name="METHOD_NAME" value="addValueByIndexNegative" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyArrayListIntegerTest.growArrayLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ArrayListBasicAlgorithms" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyArrayListIntegerTest" />
+      <option name="METHOD_NAME" value="growArrayLength" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,11 +103,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.MyArrayListTest" />
         <item itemvalue="JUnit.MyArrayListIntegerTest" />
-        <item itemvalue="JUnit.MyArrayListTest.addValueByIndexNegative" />
-        <item itemvalue="JUnit.MyArrayListTest.addValueByIndex" />
+        <item itemvalue="JUnit.MyArrayListIntegerTest.addValue" />
+        <item itemvalue="JUnit.MyArrayListIntegerTest.addValueByIndex" />
+        <item itemvalue="JUnit.MyArrayListIntegerTest.addValueByIndexNegative" />
+        <item itemvalue="JUnit.MyArrayListIntegerTest.growArrayLength" />
       </list>
     </recent_temporary>
   </component>
@@ -128,7 +123,7 @@
       <workItem from="1657893050806" duration="16131000" />
       <workItem from="1657941461571" duration="79293000" />
       <workItem from="1658579555928" duration="11806000" />
-      <workItem from="1658724355172" duration="9751000" />
+      <workItem from="1658724355172" duration="40092000" />
     </task>
     <task id="LOCAL-00001" summary="первый коммит">
       <created>1657892243471</created>
@@ -151,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658725269545</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="домашнее задание по теме 2.14/2.15 корректировки">
+      <created>1658756120521</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1658756120521</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +174,8 @@
     <MESSAGE value="первый коммит" />
     <MESSAGE value="домашнее задание по теме 2.14 Основы алгоритмов, часть 1 - выполнила" />
     <MESSAGE value="домашнее задание по теме 2.15 Основы алгоритмов, часть 2 - выполнила" />
-    <option name="LAST_COMMIT_MESSAGE" value="домашнее задание по теме 2.15 Основы алгоритмов, часть 2 - выполнила" />
+    <MESSAGE value="домашнее задание по теме 2.14/2.15 корректировки" />
+    <option name="LAST_COMMIT_MESSAGE" value="домашнее задание по теме 2.14/2.15 корректировки" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListTest_lastIndexOfValue.ic" NAME="MyArrayListTest.lastIndexOfValue Coverage Results" MODIFIED="1658313110227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -181,10 +184,10 @@
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListTest_addValueByIndex.ic" NAME="MyArrayListTest.addValueByIndex Coverage Results" MODIFIED="1658507102295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest_getValue.ic" NAME="MyArrayListIntegerTest.getValue Coverage Results" MODIFIED="1658594423174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListTest_isEmptyValues.ic" NAME="MyArrayListTest.isEmptyValues Coverage Results" MODIFIED="1658313922129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest_addValue.ic" NAME="MyArrayListIntegerTest.addValue Coverage Results" MODIFIED="1658505920847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest_addValue.ic" NAME="MyArrayListIntegerTest.addValue Coverage Results" MODIFIED="1659016812637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListTest_equalsLists.ic" NAME="MyArrayListTest.equalsLists Coverage Results" MODIFIED="1658313373184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest.ic" NAME="MyArrayListIntegerTest Coverage Results" MODIFIED="1658755048462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListTest.ic" NAME="MyArrayListTest Coverage Results" MODIFIED="1658755074631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest.ic" NAME="MyArrayListIntegerTest Coverage Results" MODIFIED="1659016827605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListTest_addValueNegative.ic" NAME="MyArrayListTest.addValueNegative Coverage Results" MODIFIED="1658305691876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListTest_removeValue.ic" NAME="MyArrayListTest.removeValue Coverage Results" MODIFIED="1658312532796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListTest_clearList.ic" NAME="MyArrayListTest.clearList Coverage Results" MODIFIED="1658313960397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -195,6 +198,7 @@
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest_newStringList.ic" NAME="MyArrayListIntegerTest.newStringList Coverage Results" MODIFIED="1658508388788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListTest_indexValue.ic" NAME="MyArrayListTest.indexValue Coverage Results" MODIFIED="1658313022801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest_setValueByIndex.ic" NAME="MyArrayListIntegerTest.setValueByIndex Coverage Results" MODIFIED="1658507241211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest_quickSortArray.ic" NAME="MyArrayListIntegerTest.quickSortArray Coverage Results" MODIFIED="1658929184384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest_equalsListsNegativeContent.ic" NAME="MyArrayListIntegerTest.equalsListsNegativeContent Coverage Results" MODIFIED="1658594470990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest_isEmptyValues.ic" NAME="MyArrayListIntegerTest.isEmptyValues Coverage Results" MODIFIED="1658508279722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListTest_setValueByIndex.ic" NAME="MyArrayListTest.setValueByIndex Coverage Results" MODIFIED="1658312051629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -207,7 +211,7 @@
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListTest_equalsListsNegative.ic" NAME="MyArrayListTest.equalsListsNegative Coverage Results" MODIFIED="1658475921331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest_sizeValues.ic" NAME="MyArrayListIntegerTest.sizeValues Coverage Results" MODIFIED="1658508231353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest_removeValueByIndex.ic" NAME="MyArrayListIntegerTest.removeValueByIndex Coverage Results" MODIFIED="1658594372450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest_addValueByIndex.ic" NAME="MyArrayListIntegerTest.addValueByIndex Coverage Results" MODIFIED="1658753839373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest_addValueByIndex.ic" NAME="MyArrayListIntegerTest.addValueByIndex Coverage Results" MODIFIED="1659016635150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest_indexValue.ic" NAME="MyArrayListIntegerTest.indexValue Coverage Results" MODIFIED="1658594395269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListTest_lastIndexValue.ic" NAME="MyArrayListTest.lastIndexValue Coverage Results" MODIFIED="1657942688813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ArrayListBasicAlgorithms$MyArrayListIntegerTest_containsNumber.ic" NAME="MyArrayListIntegerTest.containsNumber Coverage Results" MODIFIED="1658595388956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

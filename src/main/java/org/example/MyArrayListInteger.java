@@ -1,7 +1,6 @@
 package org.example;
 
 import org.example.exceptions.MyArrayListIllegalArgumentException;
-import org.example.exceptions.MyArrayListIndexOutException;
 import org.example.interfaces.IntegerList;
 
 import java.util.Arrays;
@@ -10,7 +9,8 @@ import java.util.Objects;
 
 public class MyArrayListInteger implements IntegerList {
 
-    private final Integer[] listInt;
+
+    private Integer[] listInt;
     private int capacity;
     private final int DEFAULT_CAPACITY = 10;
 
@@ -33,7 +33,10 @@ public class MyArrayListInteger implements IntegerList {
             throw new MyArrayListIllegalArgumentException("Передаваемое значение null");
         }
         if (capacity >= listInt.length) {
-            throw new MyArrayListIndexOutException("Все ячейки массива заполнены");
+            grow();
+            listInt[capacity] = item;
+            capacity++;
+            return item;
         }
         listInt[capacity] = item;
         capacity++;
@@ -42,9 +45,6 @@ public class MyArrayListInteger implements IntegerList {
 
     @Override
     public Integer add(int index, Integer item) {
-        if (capacity >= listInt.length) {
-            throw new MyArrayListIllegalArgumentException("Список полон");
-        }
         if (index > capacity) {
             throw new MyArrayListIllegalArgumentException("Индекс: " + index + ", " + "количество элементов в списке: " + capacity);
         }
@@ -54,16 +54,32 @@ public class MyArrayListInteger implements IntegerList {
         if (Objects.isNull(item)) {
             throw new MyArrayListIllegalArgumentException("переданное значение = null");
         }
+        if (capacity >= listInt.length) {
+            grow();
+            for (int i = capacity; i > index; i--) {
+                listInt[i] = listInt[i - 1];
+            }
+            listInt[index] = item;
+            capacity++;
+            return item;
+        } else {
 
-        for (int i = capacity; i > index; i--) {
-            listInt[i] = listInt[i - 1];
+            for (int i = capacity; i > index; i--) {
+                listInt[i] = listInt[i - 1];
+            }
+            listInt[index] = item;
+            capacity++;
         }
-        listInt[index] = item;
-        capacity++;
-
         return item;
-
     }
+
+    private void grow() {
+        int newCapacity = capacity + (capacity >> 1);
+        Integer[] list = new Integer[newCapacity];
+        System.arraycopy(listInt, 0, list, 0, listInt.length);
+        this.listInt = list;
+    }
+
 
     @Override
     public Integer set(int index, Integer item) {
@@ -131,7 +147,7 @@ public class MyArrayListInteger implements IntegerList {
     }
 
     private Integer[] doSortingInsertion() {
-        for (int i = 1; i < capacity; i++) {
+        for (int i = 1; i < capacity - 1; i++) {
             int current = listInt[i];
             int j = i;
             while (j > 0 && listInt[j - 1] > current) {
@@ -148,6 +164,7 @@ public class MyArrayListInteger implements IntegerList {
     private boolean doBinarySearch(Integer[] listInt, int element) {
         int min = 0;
         int max = listInt.length - 1;
+
 
         while (min <= max) {
             int mid = (min + max) / 2;
@@ -262,13 +279,34 @@ public class MyArrayListInteger implements IntegerList {
         return toArray;
     }
 
+    public Integer[] doQuickSort(Integer[] listInt, int start, int end) {
+        if (start >= end) return listInt;
+        int i = start;
+        int j = end;
+        int op = i - (i - j) / 2;
+        while (i < j) {
+            while ((i < op) && (listInt[i] <= listInt[op])) i++;
+            while ((j > op) && (listInt[j] >= listInt[op])) j--;
+            if (i < j) {
+                int temp = listInt[i];
+                listInt[i] = listInt[j];
+                listInt[j] = temp;
+                if (i == op) op = j;
+                else if (j == op) op = i;
+            }
+        }
+        doQuickSort(listInt, start, op);
+        doQuickSort(listInt, op + 1, end);
+        return listInt;
+    }
+
 
     @Override
     public String toString() {
         return "MyArrayList{" +
                 "listInt=" + Arrays.toString(listInt) +
-                ", size=" + capacity +
-                ", DEFAULT_CAPACITY=" + DEFAULT_CAPACITY +
+                ", capacity=" + capacity +
+                ", listInt.length =" + listInt.length +
                 '}';
     }
 }
